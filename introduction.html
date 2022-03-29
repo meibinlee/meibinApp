@@ -31,30 +31,16 @@
         }
         .container_home_2{
             background-color: #BC8381;
-            min-height: 65rem;
-            min-width: 100%;
-            position: relative;
-        }
-        .container_home_3{
-            background-color: #F7E1E0;
             min-height: 55rem;
             min-width: 100%;
             position: relative;
         }
-        .home_1,.home_2,.home_3{
+        .home_1,.home_2{
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 2.5rem;
-            right: 1.5rem;
-            display: none;
-        }
-
 
         /*about chart*/
 
@@ -110,13 +96,6 @@
             content: attr(data-after);
         }
 
-        .bi-arrow-up-circle-fill{
-            color: #888;
-        }
-        .bi-arrow-up-circle-fill:hover{
-            color: #222;
-        }
-
         footer{
             font-size: 0.5rem;
         }
@@ -154,13 +133,13 @@
     </div>
     
     <section>
-        <main id="home_1" class="container_home_1 container">
+        <main class="container_home_1 container">
             <div class="home_1 container text-center">
                 <h1>Meibin Lee</h1>
                 <p class="lead pt-3 text-black-50">Enjoy Reading, Traveling, and Programming</p>
                 <p class="lead pt-3">
                     <!--learn more을 누르는 경우 아래로 스크롤되도록 할  것 -->
-                    <a href="#home_2" class="btn btn-sm btn-secondary fw-bold bg-gray">Skills</a>
+                    <a href="#home_2" class="btn btn-sm btn-secondary fw-bold bg-gray">Learn more</a>
                 </p>
             </div>
         </main>
@@ -215,6 +194,7 @@
                     </div>
                 </div>
 
+
                 <div class="row pt-5">
                     <div class="col-md-3">
                         <div class="skill-item center-block">
@@ -260,36 +240,11 @@
                         </div>
                     </div>
                 </div>
-                <p class="lead pt-3">
-                    <!--learn more을 누르는 경우 아래로 스크롤되도록 할  것 -->
-                    <a href="#home_3" class="btn btn-sm btn-secondary fw-bold bg-gray">Learn more</a>
-                </p>
             </div>
         </main>
-
-
-        <main id="home_3" class="container_home_3 container">
-            <div class="home_3 container text-center">
-                <h1>Meibin Lee</h1>
-                <p class="lead pt-3 text-black-50">Enjoy Reading, Traveling, and Programming</p>
-                <p class="lead pt-3">
-                    <a href="#home_2" class="btn btn-sm btn-secondary fw-bold bg-gray">Learn more</a>
-                </p>
-            </div>
-        </main>
-
     </section>
 
-    <a id="back-to-top" class="back-to-top" href="#" role="button">
-        <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
-            <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
-        </svg>
-    </a>
-
-    <!-- <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a> -->
-
-
-    <footer class="m-0 p-4 text-white-50 bg-dark ">
+    <footer class="m-0 p-2 text-white-50 bg-dark ">
         <p class="m-0">Copyright 2022 by <a href="https://www.instagram.com/meibinlinda/" class="text-white">@meibinlinda</a>. All Rights Reserved</p>
     </footer>
 
