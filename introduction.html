@@ -20,84 +20,54 @@
     <script src="js/plugins/jquery.appear.min.js"></script>
     <script src="js/plugins/jquery.easypiechart.min.js"></script>
     <script src="js/home.js"></script>
+    
+    <!--AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!--timeline css-->
+    <link rel="stylesheet" href="css/timeline.css">
 
     <style>
-        .container_home_1{
-            background-color: #F7E1E0;
+        .container_introduction_1{
+            background-color: #BC8381;
             margin-top: 56px;
             min-height: 55rem;
             min-width: 100%;
             position: relative;
         }
-        .container_home_2{
-            background-color: #BC8381;
-            min-height: 55rem;
-            min-width: 100%;
-            position: relative;
-        }
-        .home_1,.home_2{
+        .introduction_1{
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
 
-        /*about chart*/
-
-        .skill-item{
-            position: relative;
-            max-width: 250px;
-            width: 100%;
-            color: #fff;
-        }
-
-        .chart-container{
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-top: 100%;
-        }
-
-        .skill-item p{
-            font-weight: bolder;
-            padding-top: 2rem;
-        }
-
-        .skill-item .chart,
-        .skill-item .chart canvas{
+        .timeline>.col>hr{
+            height:10vh;
+            width:.5vw;
+            border-width:0;
+            color:#000;
+            background-color:#000;
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100% !important;
-            height: 100% !important;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
         }
 
-        .skill-item .chart:before{
-            content: "";
-            width: 0;
-            height: 100%;
+        .back-to-top {
+            position: fixed;
+            bottom: 2.5rem;
+            right: 1.5rem;
         }
-
-        .skill-item .chart:before,
-        .skill-item .percent{
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        .skill-item .percent{
-            position: relative;
-            line-height: 1;
-            font-size: 3rem;
-            font-weight: 900;
-            z-index: 2;
-        }
-
-        .skill-item  .percent:after{
-            content: attr(data-after);
-        }
-
-        footer{
+        footer>.footer_1{
             font-size: 0.5rem;
+        }
+        footer>.footer_2{
+            position: absolute;
+            top: 50%;
+            right: 5%;
         }
     </style>
 
@@ -118,7 +88,7 @@
                         <a class="nav-link" href="introduction.html">Introduction</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="project.html">Projects</a>
+                        <a class="nav-link" href="projects.html">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="world.html">World</a>
@@ -133,110 +103,25 @@
     </div>
     
     <section>
-        <main class="container_home_1 container">
-            <div class="home_1 container text-center">
-                <h1>Meibin Lee</h1>
-                <p class="lead pt-3 text-black-50">Enjoy Reading, Traveling, and Programming</p>
-                <p class="lead pt-3">
-                    <!--learn more을 누르는 경우 아래로 스크롤되도록 할  것 -->
-                    <a href="#home_2" class="btn btn-sm btn-secondary fw-bold bg-gray">Learn more</a>
-                </p>
-            </div>
-        </main>
-        
-        <main id="home_2" class="b-skills container_home_2 container">
-            <div class="home_2 container text-center p-5">
-                <h1 class="text-white">Skills</h1>
-                <p class="lead pt-3 text-black-50">Meibin's Skills</p>
-                <div class="row pt-2">
-                    <div class="col-md-3">
-                        <div class="skill-item center-block">
-                            <div class="chart-container">
-                                <div class="chart" data-percent="90" data-bar-color="#B195B2">
-                                    <span class="percent" data-after="%">90</span>
-                                </div>
-                            </div>
-                            <p>HTML5</p>
+        <main id="introduction_1" class="container_introduction_1 container">
+            <div class="introduction_1 container text-center">
+                <h1 class="text-white">Her Story</h1>
+                <p class="lead pt-3 text-black-50">Hi there, welcome to see her story</p>
+                <!--timeline-->
+                <div class="timeline row">
+                    <div class="col timeline-l">
+                        <div class="content">
+                            <h2>2017</h2>
+                            <p>Lorem ipsum</p>
                         </div>
                     </div>
-
-                    <div class="col-md-3">
-                        <div class="skill-item center-block">
-                            <div class="chart-container">
-                                <div class="chart" data-percent="90" data-bar-color="#6F5768">
-                                    <span class="percent" data-after="%">90</span>
-                                </div>
-                            </div>
-                            <p>CSS3</p>
-                        </div>
+                    <div class="col">
+                        <hr>
                     </div>
-
-                    <div class="col-md-3">
-                        <div class="skill-item center-block">
-                            <div class="chart-container">
-                                <div class="chart" data-percent="60" data-bar-color="#5C5B7E">
-                                    <span class="percent" data-after="%">60</span>
-                                </div>
-                            </div>
-                            <p>Javascript</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="skill-item center-block">
-                            <div class="chart-container">
-                                <div class="chart" data-percent="80" data-bar-color="#72A5AD">
-                                    <span class="percent" data-after="%">80</span>
-                                </div>
-                            </div>
-                            <p>Bootstrap</p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row pt-5">
-                    <div class="col-md-3">
-                        <div class="skill-item center-block">
-                            <div class="chart-container">
-                                <div class="chart" data-percent="50" data-bar-color="#72A5AD">
-                                    <span class="percent" data-after="%">50</span>
-                                </div>
-                            </div>
-                            <p>PHP</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="skill-item center-block">
-                            <div class="chart-container">
-                                <div class="chart" data-percent="50" data-bar-color="#5C5B7E">
-                                    <span class="percent" data-after="%">50</span>
-                                </div>
-                            </div>
-                            <p>Springboot</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="skill-item center-block">
-                            <div class="chart-container">
-                                <div class="chart" data-percent="80" data-bar-color="#6F5768">
-                                    <span class="percent" data-after="%">80</span>
-                                </div>
-                            </div>
-                            <p>Database</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="skill-item center-block">
-                            <div class="chart-container">
-                                <div class="chart" data-percent="60" data-bar-color="#B195B2">
-                                    <span class="percent" data-after="%">60</span>
-                                </div>
-                            </div>
-                            <p>ELK</p>
+                    <div class="col">
+                        <div class="content timeline-r">
+                            <h2>2017</h2>
+                            <p>Lorem ipsum</p>
                         </div>
                     </div>
                 </div>
@@ -244,9 +129,49 @@
         </main>
     </section>
 
-    <footer class="m-0 p-2 text-white-50 bg-dark ">
-        <p class="m-0">Copyright 2022 by <a href="https://www.instagram.com/meibinlinda/" class="text-white">@meibinlinda</a>. All Rights Reserved</p>
-    </footer>
+    <a id="back-to-top" class="back-to-top" href="#" role="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+        </svg>
+    </a>
+
+    <footer class="m-0 p-4 text-white-50 bg-dark ">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="https://www.instagram.com/meibinlinda/" class="btn fw-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                            </svg>
+                        </a>
+                        <a href="https://blog.naver.com/meibinlee" class="btn fw-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house-heart" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.707L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.646a.5.5 0 0 0 .708-.707L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207l-5-5-5 5V13.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7.207Zm-5-.225C9.664 5.309 13.825 8.236 8 12 2.175 8.236 6.336 5.309 8 6.982Z"/>
+                            </svg>
+                        </a>
+                        <a href="https://vinalinda.tistory.com/" class="btn fw-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house-heart-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.707L8 2.207l6.646 6.646a.5.5 0 0 0 .708-.707L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                                <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Zm0 5.189c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.691 0-5.018Z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/meibinlee" class="btn fw-bold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-git" viewBox="0 0 16 16">
+                                <path d="M15.698 7.287 8.712.302a1.03 1.03 0 0 0-1.457 0l-1.45 1.45 1.84 1.84a1.223 1.223 0 0 1 1.55 1.56l1.773 1.774a1.224 1.224 0 0 1 1.267 2.025 1.226 1.226 0 0 1-2.002-1.334L8.58 5.963v4.353a1.226 1.226 0 1 1-1.008-.036V5.887a1.226 1.226 0 0 1-.666-1.608L5.093 2.465l-4.79 4.79a1.03 1.03 0 0 0 0 1.457l6.986 6.986a1.03 1.03 0 0 0 1.457 0l6.953-6.953a1.031 1.031 0 0 0 0-1.457"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        <p>Copyright 2022 by 
+                            Meibin Lee. All Rights Reserved
+                        </p>
+                    </div>
+                </div>
+        </footer>
+
+    <script>
+        AOS.init();
+    </script>
 
   </body>
 </html>
