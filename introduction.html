@@ -19,7 +19,8 @@
     <script src="js/plugins/jquery-2.2.4.min.js"></script>
     <script src="js/plugins/jquery.appear.min.js"></script>
     <script src="js/plugins/jquery.easypiechart.min.js"></script>
-    <script src="js/home.js"></script>
+    <script src="js/introduction.js"></script>
+    <script src="js/move_to_top.js"></script>
     
     <!--AOS-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -36,24 +37,114 @@
             min-width: 100%;
             position: relative;
         }
-        .introduction_1{
+        .container_introduction_2{
+            background-color: #F7E1E0;
+            min-height: 10rem;
+            min-width: 100%;
+            position: relative;
+        }
+        .container_introduction_3{
+            background-color: #F7E1E0;
+            min-height: 150rem;
+            min-width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        /* .introduction_3{
+            display: inline-flex;
+        } */
+
+        .introduction_1,.introduction_2,.introduction_3{
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
 
-        .timeline>.col>hr{
-            height:10vh;
-            width:.5vw;
-            border-width:0;
-            color:#000;
-            background-color:#000;
+
+        .downbtn:hover{
+            color: #535353ab;
+        }
+        .downbtn{
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            margin-top: 10rem;
+        }
+        /*-----------timeline css-----------*/
+
+/* 
+        hr{
+            height: 6px;
+            width: 70%;
+            background: white;
+            border-radius: 5px;
+            margin: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            position: relative;
+
+        } */
+
+        #timeline_layout{
+            margin-top: 20px;
+        }
+
+        #line {
+            height: 8px;
+            width: 100%;
+            background: #BC8381;
+            border-radius: 5px;
+            position: fixed;
+            margin-top: 2rem;
+            z-index: 1;
+        }
+
+        .btn-circle{
+            width: 30px;
+            height: 30px;
+            background-color: #BC8381;
+            border-radius: 50%;
+            position: fixed;
+            margin-top: 1.3rem;
+            z-index: 2;
+            transition-duration: 1000ms;
+        }
+
+
+        .btn-circle:hover{
+            background-color: #535353;
+            transition-duration: 1000ms;
+        }
+
+        .timeline_contents{
+            margin-bottom: 20%;
+        }
+
+        #timeline_btn>.col>p{
+            color: #535353;
+            font-weight: bold;
+        }
+
+        .time_seperator{
+            height: 1px;
+            width: 5rem;
+            background: #535353;
+            border-radius: 5px;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%,-50%);
 
+        }
+        /*-----------------------------------*/
+
+
+        .bi-arrow-up-circle-fill{
+            color: #535353ab;
+        }
+        .bi-arrow-up-circle-fill:hover{
+            color: #819fbc;
         }
 
         .back-to-top {
@@ -85,7 +176,7 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="introduction.html">Introduction</a>
+                        <a class="nav-link active" href="introduction.html">Introduction</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="projects.html">Projects</a>
@@ -107,22 +198,79 @@
             <div class="introduction_1 container text-center">
                 <h1 class="text-white">Her Story</h1>
                 <p class="lead pt-3 text-black-50">Hi there, welcome to see her story</p>
-                <!--timeline-->
-                <div class="timeline row">
-                    <div class="col timeline-l">
-                        <div class="content">
-                            <h2>2017</h2>
-                            <p>Lorem ipsum</p>
-                        </div>
+                <p class="lead text-black-50">scroll down to see her story</p>
+                <a href="#introduction_2" class="downbtn btn fw-bold"><p>down</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                        <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </a>
+            </div>
+        </main>
+
+        <!--make introduction_2 be fixed when scrolling-->
+        <main id="introduction_2" class="container_introduction_2 container">
+            <div id="timeline_layout" class="introduction_2 container text-center"> 
+                <!--line-->
+                <div id="line"></div>
+                <!--circle buttons-->
+                <div id="timeline_btn" class="row">
+                    <div id="btn_2017" class="col"><a href="#timeline_2017" class="btn btn-circle"></a><p>2017</p></div>
+                    <div id="btn_2018" class="col"><a href="#timeline_2018" class="btn btn-circle"></a><p>2018</p></div>
+                    <div id="btn_2019" class="col"><a href="#timeline_2019" class="btn btn-circle"></a><p>2019</p></div>
+                    <div id="btn_2020" class="col"><a href="#timeline_2020" class="btn btn-circle"></a><p>2020</p></div>
+                    <div id="btn_2021" class="col"><a href="#timeline_2021" class="btn btn-circle"></a><p>2021</p></div>
+                    <div id="btn_2022" class="col"><a href="#timeline_2022" class="btn btn-circle"></a><p>2022</p></div>
+                </div>
+            </div>
+        </main>
+        <main id="introduction_3" class="container_introduction_3 container">
+            <div class="introduction_3 container text-center mt-5">
+                <!--Timeline 2017-->
+                <div id="timeline_2017" class="row timeline_contents mb-5">
+                    <h1 class="text-white pb-5">2017</h1>
+                    <!--contents-->
+                    <div class="timeline_content col-md-12 p-5">
+                        <h2>Feb, 2017</h2>
+                        <p class="text-black-50">Graduate Daejin girl's Highschool</p>  
                     </div>
-                    <div class="col">
-                        <hr>
+                    <div class="timeline_content col-md-12 p-5">
+                        <h2>Mar, 2017</h2>
+                        <p class="text-black-50">Enter Computer Engineering, Hongik University</p>  
                     </div>
-                    <div class="col">
-                        <div class="content timeline-r">
-                            <h2>2017</h2>
-                            <p>Lorem ipsum</p>
-                        </div>
+                    <div class="timeline_content col-md-12 p-5">
+                        <h2>Jun, 2017</h2>
+                        <p class="text-black-50">Study in Vancouver, Canada for 6 weeks</p>  
+                    </div>
+                    <div class="timeline_content col-md-12 p-5">
+                        <h2>Dec, 2017</h2>
+                        <p class="text-black-50">Study in Auckland, Newzealand for 8 weeks</p>  
+                    </div>
+                </div>
+                <!--Timeline 2018-->
+                <div id="timeline_2018" class="row timeline_contents pt-5 mb-5">
+                    <h1 class="text-white pb-5">2018</h1>
+                    <!--contents-->
+                    <div class="timeline_content col-md-12 p-5">
+                        <h2>Jun, 2018</h2>
+                        <p class="text-black-50">Study in Toronto, Canada for 7 weeks</p>  
+                    </div>
+                    <div class="timeline_content col-md-12 p-5">
+                        <h2>Dec, 2018</h2>
+                        <p class="text-black-50">Study in Los Angeles, USA for 8 weeks</p>  
+                    </div>
+                </div>
+                <!--Timeline 2019-->
+                <div id="timeline_2019" class="row timeline_contents pt-5 mb-5">
+                    <h1 class="text-white pb-5">2019</h1>
+                    <!--contents-->
+                    <div class="timeline_content col-md-12 p-5">
+                        <h2>Jun, 2019</h2>
+                        <p class="text-black-50">Study in London, UK for 8 weeks</p>  
+                    </div>
+                    <div class="timeline_content col-md-12 p-5">
+                        <h2>Dec, 2018</h2>
+                        <p class="text-black-50">Study in Barcelona, Spain for 9 weeks</p>  
                     </div>
                 </div>
             </div>
