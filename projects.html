@@ -19,7 +19,7 @@
     <script src="js/plugins/jquery-2.2.4.min.js"></script>
     <script src="js/plugins/jquery.appear.min.js"></script>
     <script src="js/plugins/jquery.easypiechart.min.js"></script>
-    <!-- <script src="js/introduction.js"></script> -->
+    <script src="js/project.js"></script>
     <script src="js/move_to_top.js"></script>
     
     <!--AOS-->
@@ -30,139 +30,56 @@
     <link rel="stylesheet" href="css/timeline.css">
 
     <style>
-        .container_introduction_1{
-            background-color: #BC8381;
+        .container_projects_1{
             margin-top: 56px;
-            min-height: 55rem;
+            min-height: 60rem;
             min-width: 100%;
             position: relative;
         }
-        .container_introduction_3{
-            background-color: #F7E1E0;
-            min-height: 150rem;
-            min-width: 100%;
-            position: relative;
-            overflow: hidden;
-            z-index: -1;
-        }
-        /* .introduction_3{
-            display: inline-flex;
-        } */
-        /* .introduction_2_fixed {
-            position:  fixed !important;
-        } */
-       .introduction_2{
-            background-color: #F7E1E0;
-            min-width: 100%;
-            position: fixed;
-            top: 5%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            z-index: 5;
-
-       }
-        .introduction_1,.introduction_3{
+        .projects_1{
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
-        .introduction_3{
-            margin-top: 5rem;
-        }
 
+        /*-----------project icons-----------*/
 
-        .downbtn:hover{
-            color: #535353ab;
-        }
-        .downbtn{
+        .project_icon{
             position: absolute;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            margin-top: 10rem;
         }
-        /*-----------timeline css-----------*/
-
-/* 
-        hr{
-            height: 6px;
-            width: 70%;
-            background: white;
-            border-radius: 5px;
-            margin: auto;
-            top: 50%;
-            transform: translateY(-50%);
-            position: relative;
-
-        } */
-
-        #timeline_layout{
-            margin-top: 20px;
-            z-index: 5;
+        .project_icon>a>svg{
+            color: #F7E1E0;
+        }
+        .project_icon>a>svg:hover{
+            color: #BC8381;
         }
 
-        #line {
-            height: 8px;
-            width: 100%;
-            background: #BC8381;
-            border-radius: 5px;
-            margin-top: 10%;
-            z-index: 5;
+        #project_icon_1{
+            top: 40%;
+            left: 20%;
         }
-
-        @media(max-width:992px){
-            #line {
-                height: 8px;
-                width: 100%;
-                background: #BC8381;
-                border-radius: 5px;
-                margin-top: 20%;
-                z-index: 5;
-            }
+        #project_icon_2{
+            top: 15%;
+            left: 35%;
         }
-
-        .btn-circle{
-            width: 30px;
-            height: 30px;
-            background-color: #BC8381;
-            border-radius: 50%;
-            z-index: 5;
-            transition-duration: 1000ms;
-            padding: 0;
+        #project_icon_3{
+            top: 18%;
+            left: 60%;
         }
-
-
-        .btn-circle:hover{
-            background-color: #535353;
-            transition-duration: 1000ms;
+        #project_icon_4{
+            top: 45%;
+            left: 75%;
         }
-
-        .timeline_contents{
-            margin-bottom: 20%;
+        #project_icon_5{
+            top: 70%;
+            left: 30%;
+        }
+        #project_icon_6{
+            top: 75%;
+            left: 60%;
         }
         
-        #timeline_btn{
-            position: relative;
-            bottom: 1.2rem;
-        }
-
-        #timeline_btn>.col>p{
-            color: #535353;
-            font-weight: bold;
-            position: relative;
-        }
-
-        /* .time_seperator{
-            height: 1px;
-            width: 5rem;
-            background: #535353;
-            border-radius: 5px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-
-        } */
         /*-----------------------------------*/
 
         .bi-arrow-up-circle-fill,.bi-house-heart,
@@ -195,6 +112,16 @@
             color: #819fbc;
         }
 
+        .downbtn:hover{
+            color: #BC8381;
+        }
+        .downbtn{
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            margin-top: 10rem;
+            color: #F7E1E0;
+        }
         .back-to-top {
             position: fixed;
             bottom: 2.5rem;
@@ -224,10 +151,10 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="introduction.html">Introduction</a>
+                        <a class="nav-link" href="introduction.html">Introduction</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
+                        <a class="nav-link active" href="projects.html">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="world.html">World</a>
@@ -242,84 +169,53 @@
     </div>
     
     <section>
-        <main id="introduction_1" class="container_introduction_1 container">
-            <div class="introduction_1 container text-center">
-                <h1 class="text-white">Her Story</h1>
-                <p class="lead pt-3 text-black-50">Hi there, welcome to see her story</p>
-                <p class="lead text-black-50">scroll down to see her story</p>
-                <a href="#introduction_3" class="downbtn btn fw-bold"><p>down</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                        <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+        <main id="projects_1" class="bg-dark container_projects_1 container">
+            <div class="projects_1 container text-center">
+                <h1 class="text-white" data-aos="flip-up" data-aos-duration="2000" data-aos-delay="2000">Her Projects</h1>
+                <p class="lead pt-3" style="color: #F7E1E0;" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="2000">Hi there, welcome to see her projects</p>
+                <p class="lead" style="color: #F7E1E0;" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="2000">Click an icon to see a projet</p>
+            </div>
+            <div id="project_icon_1" class="project_icon" data-aos="fade-right" data-aos-duration="3000">
+                <a href="project_1.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="4rem" height="4rem" fill="currentColor" class="bi bi-emoji-dizzy-fill" viewBox="0 0 16 16">
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM4.146 5.146a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 1 1 .708.708l-.647.646.647.646a.5.5 0 1 1-.708.708L5.5 7.207l-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708zm5 0a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708.708l-.647.646.647.646a.5.5 0 0 1-.708.708l-.646-.647-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708zM8 13a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
                     </svg>
                 </a>
             </div>
-        </main>
-        <main id="introduction_3" class="container_introduction_3 container">
-            <!--make introduction_2 be fixed when scrolling-->
-            <div class="container container_introduction_2">
-                <div id="timeline_layout" class="introduction_2 container text-center"> 
-                    <!--line-->
-                    <div id="line"></div>
-                    <!--circle buttons-->
-                    <div id="timeline_btn" class="row">
-                        <div id="btn_2017" class="col"><a href="#timeline_2017" class="btn btn-circle"></a><p>2017</p></div>
-                        <div id="btn_2018" class="col"><a href="#timeline_2018" class="btn btn-circle"></a><p>2018</p></div>
-                        <div id="btn_2019" class="col"><a href="#timeline_2019" class="btn btn-circle"></a><p>2019</p></div>
-                        <div id="btn_2020" class="col"><a href="#timeline_2020" class="btn btn-circle"></a><p>2020</p></div>
-                        <div id="btn_2021" class="col"><a href="#timeline_2021" class="btn btn-circle"></a><p>2021</p></div>
-                        <div id="btn_2022" class="col"><a href="#timeline_2022" class="btn btn-circle"></a><p>2022</p></div>
-                    </div>
-                </div>
+            <div id="project_icon_2" class="project_icon" data-aos="fade-down-right" data-aos-duration="3000">
+                <a href="project_2.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="4rem" height="4rem" fill="currentColor" class="bi bi-emoji-heart-eyes-fill" viewBox="0 0 16 16">
+                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM4.756 4.566c.763-1.424 4.02-.12.952 3.434-4.496-1.596-2.35-4.298-.952-3.434zm6.559 5.448a.5.5 0 0 1 .548.736A4.498 4.498 0 0 1 7.965 13a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .548-.736h.005l.017.005.067.015.252.055c.215.046.515.108.857.169.693.124 1.522.242 2.152.242.63 0 1.46-.118 2.152-.242a26.58 26.58 0 0 0 1.109-.224l.067-.015.017-.004.005-.002zm-.07-5.448c1.397-.864 3.543 1.838-.953 3.434-3.067-3.554.19-4.858.952-3.434z"/>
+                    </svg>
+                </a>
             </div>
-            <div class="introduction_3 container text-center">
-                <!--Timeline 2017-->
-                <div id="timeline_2017" class="row timeline_contents mb-5">
-                    <h1 class="text-white pb-5">2017</h1>
-                    <!--contents-->
-                    <div class="timeline_content col-md-12 p-5">
-                        <h2>Feb, 2017</h2>
-                        <p class="text-black-50">Graduate Daejin girl's Highschool</p>  
-                    </div>
-                    <div class="timeline_content col-md-12 p-5">
-                        <h2>Mar, 2017</h2>
-                        <p class="text-black-50">Enter Computer Engineering, Hongik University</p>  
-                    </div>
-                    <div class="timeline_content col-md-12 p-5">
-                        <h2>Jun, 2017</h2>
-                        <p class="text-black-50">Study in Vancouver, Canada for 6 weeks</p>  
-                    </div>
-                    <div class="timeline_content col-md-12 p-5">
-                        <h2>Dec, 2017</h2>
-                        <p class="text-black-50">Study in Auckland, Newzealand for 8 weeks</p>  
-                    </div>
-                </div>
-                <!--Timeline 2018-->
-                <div id="timeline_2018" class="row timeline_contents pt-5 mb-5">
-                    <h1 class="text-white pb-5">2018</h1>
-                    <!--contents-->
-                    <div class="timeline_content col-md-12 p-5">
-                        <h2>Jun, 2018</h2>
-                        <p class="text-black-50">Study in Toronto, Canada for 7 weeks</p>  
-                    </div>
-                    <div class="timeline_content col-md-12 p-5">
-                        <h2>Dec, 2018</h2>
-                        <p class="text-black-50">Study in Los Angeles, USA for 8 weeks</p>  
-                    </div>
-                </div>
-                <!--Timeline 2019-->
-                <div id="timeline_2019" class="row timeline_contents pt-5 mb-5">
-                    <h1 class="text-white pb-5">2019</h1>
-                    <!--contents-->
-                    <div class="timeline_content col-md-12 p-5">
-                        <h2>Jun, 2019</h2>
-                        <p class="text-black-50">Study in London, UK for 8 weeks</p>  
-                    </div>
-                    <div class="timeline_content col-md-12 p-5">
-                        <h2>Dec, 2018</h2>
-                        <p class="text-black-50">Study in Barcelona, Spain for 9 weeks</p>  
-                    </div>
-                </div>
+            <div id="project_icon_3" class="project_icon" data-aos="fade-down-left" data-aos-duration="3000">
+                <a href="project_3.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="4rem" height="4rem" fill="currentColor" class="bi bi-emoji-kiss-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M16 8a8 8 0 1 0-2.697 5.99c-.972-.665-1.632-1.356-1.99-2.062-.388-.766-.419-1.561-.075-2.23.496-.97 1.73-1.466 2.762-1.05.65-.262 1.38-.162 1.957.19.028-.275.043-.555.043-.838ZM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5Zm1.512 3.647c-.347.08-.737.198-1.107.319a.5.5 0 1 1-.31-.95c.38-.125.802-.254 1.192-.343.37-.086.78-.153 1.103-.108.16.022.394.085.561.286.188.226.187.497.131.705a1.894 1.894 0 0 1-.31.593c-.077.107-.168.22-.275.343.107.124.199.24.276.347.142.197.256.397.31.595.055.208.056.479-.132.706-.168.2-.404.262-.563.284-.323.043-.733-.027-1.102-.113a14.87 14.87 0 0 1-1.191-.345.5.5 0 1 1 .31-.95c.371.12.761.24 1.109.321.176.041.325.069.446.084a5.609 5.609 0 0 0-.502-.584.5.5 0 0 1 .002-.695 5.52 5.52 0 0 0 .5-.577 4.465 4.465 0 0 0-.448.082Zm.766-.086-.006-.002c.004 0 .006.002.006.002Zm.002 1.867h-.001l-.005.001a.038.038 0 0 1 .006-.002Zm.157-4.685a.5.5 0 0 1-.874-.486A1.934 1.934 0 0 1 10.25 5.75c.73 0 1.356.412 1.687 1.007a.5.5 0 1 1-.874.486.934.934 0 0 0-.813-.493.934.934 0 0 0-.813.493ZM14 9.828c1.11-1.14 3.884.856 0 3.422-3.884-2.566-1.11-4.562 0-3.421Z"/>
+                    </svg>
+                </a>
+            </div>
+            <div id="project_icon_4" class="project_icon" data-aos="fade-left" data-aos-duration="3000">
+                <a href="project_4.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="4rem" height="4rem" fill="currentColor" class="bi bi-emoji-smile-fill" viewBox="0 0 16 16">
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zM4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM10 8c-.552 0-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5S10.552 8 10 8z"/>
+                    </svg>
+                </a>
+            </div>
+            <div id="project_icon_5" class="project_icon" data-aos="fade-up-right" data-aos-duration="3000">
+                <a href="project_4.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="4rem" height="4rem" fill="currentColor" class="bi bi-emoji-laughing-fill" viewBox="0 0 16 16">
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM7 6.5c0 .501-.164.396-.415.235C6.42 6.629 6.218 6.5 6 6.5c-.218 0-.42.13-.585.235C5.164 6.896 5 7 5 6.5 5 5.672 5.448 5 6 5s1 .672 1 1.5zm5.331 3a1 1 0 0 1 0 1A4.998 4.998 0 0 1 8 13a4.998 4.998 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5zm-1.746-2.765C10.42 6.629 10.218 6.5 10 6.5c-.218 0-.42.13-.585.235C9.164 6.896 9 7 9 6.5c0-.828.448-1.5 1-1.5s1 .672 1 1.5c0 .501-.164.396-.415.235z"/>
+                    </svg>
+                </a>
+            </div>
+            <div id="project_icon_6" class="project_icon" data-aos="fade-up-left" data-aos-duration="3000">
+                <a href="project_4.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="4rem" height="4rem" fill="currentColor" class="bi bi-emoji-sunglasses-fill" viewBox="0 0 16 16">
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM2.31 5.243A1 1 0 0 1 3.28 4H6a1 1 0 0 1 1 1v.116A4.22 4.22 0 0 1 8 5c.35 0 .69.04 1 .116V5a1 1 0 0 1 1-1h2.72a1 1 0 0 1 .97 1.243l-.311 1.242A2 2 0 0 1 11.439 8H11a2 2 0 0 1-1.994-1.839A2.99 2.99 0 0 0 8 6c-.393 0-.74.064-1.006.161A2 2 0 0 1 5 8h-.438a2 2 0 0 1-1.94-1.515L2.31 5.243zM4.969 9.75A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .866-.5z"/>
+                    </svg>
+                </a>
             </div>
         </main>
     </section>
