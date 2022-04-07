@@ -25,6 +25,8 @@
     <!--AOS-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <link rel="stylesheet" href="css/meibin.css">
 
     <style>
 
@@ -52,12 +54,16 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-        .certificate_1>.row>h1{
-            transition-duration: 3000ms;
-        }
-        .certificate_1>.row>h1:hover{
-            content: "885";
-            transition-duration: 3000ms;
+
+        #certificate_content_1,#certificate_content_2,#certificate_content_3 {
+            margin-left: 30%;
+            margin-right: 30%;
+            /* width: fit-content;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); */
+
         }
 
         .back-to-top {
@@ -183,7 +189,7 @@
     <section>
         <main id="certificate_1" class="certificate container_certificate_1 container">
             <div class="certificate_1 container text-center">
-                <div id="certificate_content_1" onmouseenter="return mouseenterFunction('certificate_content_1');" onmouseout="return mouseoutFunction('certificate_content_1')" class="row" data-aos="fade-up" data-aos-duration="2000">
+                <div id="certificate_content_1" onmouseenter="return mouseenterFunction('certificate_content_1');" onmouseout="return mouseoutFunction('certificate_content_1')" class="row">
                     <h1>TOEIC Score</h1>
                     <p class="lead pt-3 text-black-50">put your mouse pointer to see her score</p>
                 </div> 
@@ -192,22 +198,22 @@
 
         <main id="certificate_2" class="certificate container_certificate_2 container">
             <div class="certificate_1 container text-center">
-                <div id="certificate_content_2" onmouseenter="return mouseenterFunction('certificate_content_2');" onmouseout="return mouseoutFunction('certificate_content_2')" class="row" data-aos="fade-up" data-aos-duration="2000">
-                    <h1>OPIc SCORE</h1>
+                <div id="certificate_content_2" onmouseenter="return mouseenterFunction('certificate_content_2');" onmouseout="return mouseoutFunction('certificate_content_2')" class="row">
+                    <h1>OPIc Level</h1>
                     <p class="lead pt-3 text-black-50">put your mouse pointer to see her score</p>
                 </div> 
                 </div>
             </div>
         </main>
 
-        <main id="certificate_3" class="certificate container_certificate_3 container">
+        <!-- <main id="certificate_3" class="certificate container_certificate_3 container">
             <div class="certificate_3 container text-center">
-                <div id="certificate_content_3" onmouseenter="return mouseenterFunction('certificate_content_3');" onmouseout="return mouseoutFunction('certificate_content_3')" class="row" data-aos="fade-up" data-aos-duration="2000">
+                <div id="certificate_content_3" onmouseenter="return mouseenterFunction('certificate_content_3');" onmouseout="return mouseoutFunction('certificate_content_3')" class="row">
                     <h1>Korean History</h1>
                     <p class="lead pt-3 text-black-50">put your mouse pointer to see her score</p>
             </div>
             </div>
-        </main>
+        </main> -->
     </section>
 
     <a id="back-to-top" class="back-to-top" href="#" role="button">
