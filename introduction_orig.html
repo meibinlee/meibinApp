@@ -51,17 +51,13 @@
         /* .introduction_2_fixed {
             position:  fixed !important;
         } */
-        .nondisplay{
-            display: none;
-        }
-        .introduction_2{
+       .introduction_2{
             background-color: #F7E1E0;
             min-width: 100%;
             position: fixed;
             top: 5%;
             left: 50%;
             transform: translate(-50%,-50%);
-            /* display: none; */
        }
         .introduction_1,.introduction_3{
             position: absolute;
@@ -256,14 +252,15 @@
                 </a>
             </div>
         </main>
-        <main id="introduction_2" class="nondisplay container_introduction_2 container">
+        <main id="introduction_3" class="container_introduction_3 container">
+            <!--make introduction_2 be fixed when scrolling-->
             <div class="container container_introduction_2">
                 <div id="timeline_layout" class="introduction_2 container text-center"> 
                     <!--line-->
                     <div id="line"></div>
                     <!--circle buttons-->
                     <div id="timeline_btn" class="row">
-                        <div id="btn_2017" class="col"><a href="#timeline_2017" class="btn btn-circle"></a><p>2017</p></div>
+                        <div id="btn_2017" class="col" onclick="goTo2017(); return false;"><button role="buttton" class="btn btn-circle"></button><p>2017</p></div>
                         <div id="btn_2018" class="col"><a href="#timeline_2018" class="btn btn-circle"></a><p>2018</p></div>
                         <div id="btn_2019" class="col"><a href="#timeline_2019" class="btn btn-circle"></a><p>2019</p></div>
                         <div id="btn_2020" class="col"><a href="#timeline_2020" class="btn btn-circle"></a><p>2020</p></div>
@@ -272,10 +269,6 @@
                     </div>
                 </div>
             </div>
-        </main>
-        <main id="introduction_3" class="container_introduction_3 container">
-            <!--make introduction_2 be fixed when scrolling-->
-            
             <div class="introduction_3 container text-center">
                 <!--Timeline 2017-->
                 <div id="timeline_2017" class="row timeline_contents mb-5">
@@ -371,8 +364,6 @@
     <script>
         AOS.init();
     </script>
-
-    <script src="js/introduction.js"></script>
 
   </body>
 </html>
